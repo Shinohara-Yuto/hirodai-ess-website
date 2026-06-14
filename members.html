@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="広島大学 ESS ドラマセクション メンバー紹介">
+  <title>メンバー紹介 | 広島大学 ESS ドラマセクション</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/members.css">
+</head>
+<body>
+  <header class="site-header scrolled" id="top">
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a href="index.html" class="nav-logo">ESS</a>
+      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#schedule">Schedule</a></li>
+        <li><a href="index.html#performances">公演</a></li>
+        <li><a href="index.html#current">最新公演</a></li>
+        <li><a href="members.html" aria-current="page">Members</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#join">Join Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="members-page">
+    <section class="members-hero">
+      <div class="container">
+        <a href="index.html#about" class="members-back">← ホームに戻る</a>
+        <span class="section-label">Members</span>
+        <h1 class="members-hero-title">メンバー紹介</h1>
+        <p class="members-hero-lead">34人の個性が、ひとつの舞台をつくる。公演・練習・イベント、全部がESSドラマの日常です。</p>
+        <div class="members-hero-actions">
+          <a href="index.html#current" class="btn btn-primary btn-sm">7/20 リメコン</a>
+          <a href="index.html#join" class="btn btn-outline">新歓・見学</a>
+        </div>
+        <div class="members-summary">
+          <a href="#grade-3" class="summary-chip">3年生 <strong>10</strong>名</a>
+          <a href="#grade-2" class="summary-chip">2年生 <strong>8</strong>名</a>
+          <a href="#grade-1" class="summary-chip">1年生 <strong>16</strong>名</a>
+          <span class="summary-chip summary-chip--total">合計 <strong>34</strong>名</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section members-section" id="grade-3">
+      <div class="container">
+        <div class="members-section-header">
+          <h2>3年生</h2>
+          <span class="members-count">10名</span>
+        </div>
+        <div class="members-grid" id="members-grade-3" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section members-section members-section--alt" id="grade-2">
+      <div class="container">
+        <div class="members-section-header">
+          <h2>2年生</h2>
+          <span class="members-count">8名</span>
+        </div>
+        <div class="members-grid" id="members-grade-2" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section members-section" id="grade-1">
+      <div class="container">
+        <div class="members-section-header">
+          <h2>1年生</h2>
+          <span class="members-count">16名</span>
+        </div>
+        <div class="members-grid" id="members-grade-1" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-logo">広島大学 ESS <span>English Speaking Society — Drama Section</span></p>
+      <p class="footer-copy">&copy; 2026 広島大学 ESS ドラマセクション</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/members.js"></script>
+</body>
+</html>
