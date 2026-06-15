@@ -795,6 +795,174 @@ ul {
   color: var(--color-text);
 }
 
+/* ===== Year Schedule (vertical timeline) ===== */
+.year-schedule {
+  margin-top: 8px;
+}
+
+.year-schedule-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.year-schedule-header .schedule-subtitle {
+  margin-bottom: 0;
+}
+
+.year-schedule-legend {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.year-schedule-legend-item {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.year-schedule-legend-item--performance {
+  color: #8a6d12;
+  background: rgba(201, 162, 39, 0.14);
+  border-color: rgba(201, 162, 39, 0.35);
+}
+
+.year-schedule-legend-item--event {
+  color: var(--color-purple-deep);
+  background: rgba(184, 169, 212, 0.22);
+  border-color: rgba(184, 169, 212, 0.45);
+}
+
+.year-schedule-legend-item--prep {
+  color: var(--color-text-muted);
+  background: rgba(107, 101, 120, 0.08);
+  border-color: rgba(107, 101, 120, 0.18);
+}
+
+.year-schedule-list {
+  list-style: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.year-schedule-list::before {
+  content: "";
+  position: absolute;
+  left: 52px;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-lavender) 0%, var(--color-accent-light) 50%, var(--color-lavender) 100%);
+  border-radius: 2px;
+}
+
+.year-schedule-row {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 10px 0;
+  position: relative;
+}
+
+.year-schedule-date {
+  position: relative;
+  z-index: 1;
+  text-align: right;
+  padding-top: 14px;
+}
+
+.year-schedule-date span {
+  display: inline-block;
+  min-width: 72px;
+  padding: 8px 12px;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-purple-deep);
+  background: #fff;
+  border: 1px solid rgba(184, 169, 212, 0.45);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(26, 22, 37, 0.06);
+}
+
+.year-schedule-row--current .year-schedule-date span {
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #a88418 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(201, 162, 39, 0.35);
+}
+
+.year-schedule-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 8px 0 8px 4px;
+}
+
+.year-schedule-chip {
+  flex: 1 1 180px;
+  max-width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.year-schedule-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 22, 37, 0.08);
+}
+
+.year-schedule-chip--performance {
+  background: linear-gradient(135deg, #fffdf5 0%, #faf6eb 100%);
+  border-color: rgba(201, 162, 39, 0.35);
+}
+
+.year-schedule-chip--event {
+  background: linear-gradient(135deg, #faf8fd 0%, #f3eef9 100%);
+  border-color: rgba(184, 169, 212, 0.45);
+}
+
+.year-schedule-chip--prep {
+  background: var(--color-bg);
+  border-color: rgba(107, 101, 120, 0.12);
+}
+
+.year-schedule-row--current .year-schedule-chip--performance {
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+}
+
+.year-schedule-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+.year-schedule-chip--performance .year-schedule-tag { color: #8a6d12; }
+.year-schedule-chip--event .year-schedule-tag { color: var(--color-purple-deep); }
+.year-schedule-chip--prep .year-schedule-tag { color: var(--color-text-muted); }
+
+.year-schedule-chip p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
 /* ===== Performance Types ===== */
 .performances {
   background: var(--color-bg);
@@ -1683,6 +1851,40 @@ ul {
 
   .timeline-track {
     grid-template-columns: 1fr;
+  }
+
+  .year-schedule-list::before {
+    left: 18px;
+  }
+
+  .year-schedule-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-left: 44px;
+  }
+
+  .year-schedule-date {
+    text-align: left;
+    padding-top: 0;
+  }
+
+  .year-schedule-date span {
+    min-width: auto;
+    font-size: 0.88rem;
+    padding: 6px 14px;
+  }
+
+  .year-schedule-body {
+    padding-left: 0;
+  }
+
+  .year-schedule-chip {
+    flex: 1 1 100%;
+  }
+
+  .year-schedule-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .practice-main {
